@@ -22,6 +22,7 @@ public class Student {
         System.out.println("Please select your graduation year:\n1: Junior\n2: Mid level\n3: Senior" );
         this.graduateYear = sc.nextLine();
         setStudentID();
+        addCourses();
         showInfo();
     }
 
@@ -34,6 +35,13 @@ public class Student {
     }
 
     // Enroll for courses
+    public void addCourses()
+    {
+        System.out.println("Please enter the course you want enroll: ");
+        Scanner sc  = new Scanner(System.in);
+        String new_course = sc.nextLine();
+        this.courses = new_course + this.courses ;
+    }
 
     // View balance
 
