@@ -24,6 +24,8 @@ public class Student {
         this.graduateYear = sc.nextLine();
         setStudentID();
         addCourses();
+        ViewBalance();
+        PayFee();
         showInfo();
     }
 
