@@ -63,6 +63,13 @@ public class Student {
 
 
     // Pay tuition
+    public void PayFee()
+    {
+        System.out.println("Please enter the amount you want to pay: ");
+        Scanner sc = new Scanner(System.in);
+        int pay = sc.nextInt();
+        this.Balance = this.Balance - pay;
+    }
 
 
     // Show status
