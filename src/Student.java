@@ -6,7 +6,7 @@ public class Student {
     private String LastName;
     private String graduateYear;
     private String StudentID;
-    private String courses;
+    private String courses = "";
     private int Balance = 0;
     private int course_cost = 600;
     private int id = 1000;
@@ -26,7 +26,7 @@ public class Student {
         addCourses();
         ViewBalance();
         PayFee();
-        showInfo();
+        System.out.println("Record Updated!!!");
     }
 
     // Generate an student ID
@@ -34,7 +34,7 @@ public class Student {
     public void setStudentID()
     {
         id++;
-        this.StudentID = id + graduateYear;
+        StudentID = id + graduateYear;
     }
 
     // Enroll for courses
@@ -46,10 +46,9 @@ public class Student {
             String new_course = sc.nextLine();
             if(!new_course.equals("Q"))
             {
-                this.courses = courses + "\n" + new_course ;
-                this.Balance = this.Balance + this.course_cost;
+                courses = courses + "\n    " + new_course ;
+                Balance = Balance + course_cost;
             }
-
             else
                 break;
         }
@@ -60,7 +59,7 @@ public class Student {
     // View balance
     public void ViewBalance()
     {
-        System.out.println("Balance : " + this.Balance);
+        System.out.println("Balance : " + Balance);
     }
 
 
@@ -70,18 +69,18 @@ public class Student {
         System.out.println("Please enter the amount you want to pay: ");
         Scanner sc = new Scanner(System.in);
         int pay = sc.nextInt();
-        this.Balance = this.Balance - pay;
+        Balance = Balance - pay;
     }
 
 
     // Show status
     public void showInfo()
     {
-        System.out.println("Name "+this.FirstName + " " + this.LastName +
-                "\nGraduation Level : " + this.graduateYear +
-                "\nStudentID : "+ this.StudentID +
-                "\nEnrolled courses: "+this.courses+
-                "\nProgram Cost : " + this.Balance);
+        System.out.println("\nName "+FirstName + " " + LastName +
+                "\nGraduation Level : " + graduateYear +
+                "\nStudentID : "+ StudentID +
+                "\nEnrolled courses: "+ courses+
+                "\nBalance : " + Balance);
     }
 
 }
