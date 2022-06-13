@@ -56,6 +56,10 @@ public class Student {
     }
 
     // View balance
+    public void ViewBalance()
+    {
+        System.out.println("Balance : " + this.Balance);
+    }
 
 
     // Pay tuition
