@@ -1,3 +1,4 @@
+import javax.swing.text.View;
 import java.util.Scanner;
 
 public class Student {
@@ -37,15 +38,28 @@ public class Student {
     // Enroll for courses
     public void addCourses()
     {
-        System.out.println("Please enter the course you want enroll: ");
-        Scanner sc  = new Scanner(System.in);
-        String new_course = sc.nextLine();
-        this.courses = new_course + this.courses ;
+        do {
+            System.out.println("Please enter the course you want enroll [Press 'Q' to exit]: ");
+            Scanner sc  = new Scanner(System.in);
+            String new_course = sc.nextLine();
+            if(!new_course.equals("Q"))
+            {
+                this.courses = courses + "\n" + new_course ;
+                this.Balance = this.Balance + this.course_cost;
+            }
+
+            else
+                break;
+        }
+        while(1!=0);
+
     }
 
     // View balance
 
+
     // Pay tuition
+
 
     // Show status
     public void showInfo()
@@ -53,7 +67,8 @@ public class Student {
         System.out.println("Name "+this.FirstName + " " + this.LastName +
                 "\nGraduation Level : " + this.graduateYear +
                 "\nStudentID : "+ this.StudentID +
-                "\nEnrolled courses: "+this.courses);
+                "\nEnrolled courses: "+this.courses+
+                "\nProgram Cost : " + this.Balance);
     }
 
 }
